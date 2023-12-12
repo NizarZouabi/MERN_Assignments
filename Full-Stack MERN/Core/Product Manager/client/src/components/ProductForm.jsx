@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import axios from 'axios'
 
 const ProductForm = (props) => {
@@ -8,12 +8,14 @@ const ProductForm = (props) => {
         price: 0,
         description: ''
     })
+
     const submitHandler = (e) => {
         e.preventDefault()
         axios.post("http://localhost:8000/api/product", product)
             .then(res => {
                 console.log("Done", res.data)
-                setProducts([...products, res.data])
+                const newProduct = res.data
+                setProducts([...products, newProduct])
                 setProduct({
                 title: '',
                 price: 0,

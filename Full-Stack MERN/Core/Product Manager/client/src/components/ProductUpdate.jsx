@@ -14,9 +14,9 @@ const ProductUpdate = () => {
         axios.get("http://localhost:8000/api/product/" + id)
             .then((res) => {
                 console.log(res.data);
-                setTitle(res.data.title);
-                setPrice(res.data.price);
-                setDescription(res.data.description);
+                setTitle(res.data.Product.title);
+                setPrice(res.data.Product.price);
+                setDescription(res.data.Product.description);
             })
             .catch((err) => console.log(err));
     }, [id]);
