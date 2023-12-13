@@ -13,14 +13,14 @@ const Main = () => {
                 setProducts(res.data.AllProducts)
             })
         .catch((err) => console.log(err))
-    }, [setProducts]) //useEffect issue temp solution $`products` || JSON.stringfy(products)
+    }, [])
 
     const createProduct = (productParam) => {
         axios.post("http://localhost:8000/api/product", productParam)
             .then(res => {
                 console.log("Done", res.data)
                 const newProduct = res.data
-                setProducts([...res.data, newProduct])
+                setProducts([...products, newProduct])
             })
             .catch(err => console.log("something went wrong.", err))
     };
