@@ -40,7 +40,7 @@ const PlayerList = (props) => {
                         <td>{player.preferredPosition !== '' ? player.preferredPosition : 'Not Set'}</td>
                         <td>
                             <div className='d-flex flex-row gap-2 justify-content-center'>
-                            <DeleteBtn playerId={player._id} successCallback={() => removeFromDom(player._id)}/>
+                            <DeleteBtn playerId={player._id} playerName={player.playerName} successCallback={() => removeFromDom(player._id)}/>
                             </div>
                         </td>
                     </tr>
